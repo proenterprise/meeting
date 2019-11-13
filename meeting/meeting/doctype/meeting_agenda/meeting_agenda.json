@@ -1,0 +1,27 @@
+{
+ "creation": "2019-11-12 22:12:18.762953",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "description",
+   "fieldtype": "HTML Editor",
+   "label": "Description"
+  }
+ ],
+ "istable": 1,
+ "modified": "2019-11-12 22:19:20.937126",
+ "modified_by": "Administrator",
+ "module": "Meeting",
+ "name": "Meeting Agenda",
+ "owner": "adam@erp.co.zm",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
