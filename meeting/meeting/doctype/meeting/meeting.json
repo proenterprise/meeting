@@ -7,12 +7,20 @@
  "engine": "InnoDB",
  "field_order": [
   "title",
+  "status",
+  "column_break_3",
   "from_time",
   "to_time",
-  "next_meeting",
-  "status",
+  "section_break_10",
+  "agenda",
+  "section_break_11",
+  "attendees",
+  "invitation_section",
+  "invitation_message",
+  "send_emails",
   "section_break_6",
-  "meeting_agenda"
+  "minutes",
+  "next_meeting"
  ],
  "fields": [
   {
@@ -39,22 +47,67 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Planned\nIn Progress\nCompleted\nCancelled"
+   "options": "Planned\nInvitations Sent\nIn Progress\nCompleted\nCancelled"
   },
   {
    "collapsible": 1,
    "fieldname": "section_break_6",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Minutes"
   },
   {
-   "fieldname": "meeting_agenda",
-   "fieldtype": "Data",
-   "label": "Meeting Agenda",
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "Agenda"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break",
+   "label": "Attendees"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "attendees",
+   "fieldtype": "Table",
+   "label": "Attendees",
+   "options": "Meeting Attendee"
+  },
+  {
+   "fieldname": "minutes",
+   "fieldtype": "Table",
+   "label": "Minutes",
+   "options": "Meeting Minute"
+  },
+  {
+   "fieldname": "agenda",
+   "fieldtype": "Table",
+   "label": "Agenda",
    "options": "Meeting Agenda"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "invitation_section",
+   "fieldtype": "Section Break",
+   "label": "Invitation"
+  },
+  {
+   "depends_on": "eval:doc.status===\"Planned\"",
+   "fieldname": "send_emails",
+   "fieldtype": "Button",
+   "label": "Send Emails"
+  },
+  {
+   "fieldname": "invitation_message",
+   "fieldtype": "Text Editor",
+   "label": "Invitation Message"
   }
  ],
- "modified": "2019-11-12 22:19:07.638706",
- "modified_by": "Administrator",
+ "modified": "2019-11-18 21:40:05.252533",
+ "modified_by": "adam@erp.co.zm",
  "module": "Meeting",
  "name": "Meeting",
  "name_case": "Title Case",
@@ -92,6 +145,23 @@
    "read": 1,
    "report": 1,
    "role": "Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "role": "Meeting Attendee"
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Meeting Manager",
+   "set_user_permissions": 1,
    "share": 1,
    "write": 1
   }

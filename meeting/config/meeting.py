@@ -12,6 +12,11 @@ def get_data():
                     "type": "doctype",
                     "name": "Meeting App",
                     "label": _("Meeting"),
+                },
+                {
+                    "type": "doctype",
+                    "name": "Meeting",
+                    "label": _("Meeting"),
                 }
             ]
         }

@@ -8,13 +8,16 @@
  ],
  "fields": [
   {
+   "bold": 1,
    "fieldname": "description",
-   "fieldtype": "HTML Editor",
-   "label": "Description"
+   "fieldtype": "Text Editor",
+   "in_list_view": 1,
+   "label": "Description",
+   "reqd": 1
   }
  ],
  "istable": 1,
- "modified": "2019-11-12 22:19:20.937126",
+ "modified": "2019-11-15 14:36:47.797824",
  "modified_by": "Administrator",
  "module": "Meeting",
  "name": "Meeting Agenda",
